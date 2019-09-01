@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table {
+            display: table;
+            border-collapse: separate;
+            border-spacing: 2px;
+            border-color: gray;
+        }
+
+    </style>
+</head>
+<body>
+<h1>Welcome</h1>
+<table>
+    <tbody>
+    <td>
+        <h3>Form Input</h3>
+        <form th:object="${customer}"
+              th:method="post"
+              th:action="@{/customer/save}">
+            <div class="form-group">
+                <label for="name">Nama</label>
+                <input type="text" id="name" class="form-control" name="name" th:field="*{name}"/>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn">Kirim</button>
+                <button type="reset" class="btn">Reset</button>
+            </div>
+        </form>
+
+        <h3>Daftar Customer</h3>
+        <table width="400" border="1">
+            <thead>
+            <tr>
+                <td>No</td>
+                <td>Name</td>
+                <td>Customer Since</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="customer,iterStat: ${listCustomer}">
+                <td th:text="${iterStat.count}"></td>
+                <td th:text="${customer.name}"></td>
+                <td th:text="${customer.customerSince}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </td>
+    <td>
+
+    </td>
+    </tbody>
+</table>
+
+</body>
+</html>
