@@ -20,6 +20,6 @@ public class Customer {
     @Column(name = "NAME")
     private String name;
 
-    @Column(name = "CUSTOMER_SINCE")
-    private String customerSince;
+    @Column(name = "SINCE")
+    private String since;
 }

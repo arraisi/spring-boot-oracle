@@ -21,10 +21,6 @@ public class Order {
     @JoinColumn(name = "ID_CUSTOMER", referencedColumnName = "ID")
     private Customer customer;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "ID_PRODUCT", referencedColumnName = "ID")
-    private Product product;
-
     @Column(name = "DATE")
-    private Date date;
+    private String date;
 }

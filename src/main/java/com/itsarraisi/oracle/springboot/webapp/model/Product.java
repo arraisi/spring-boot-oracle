@@ -24,5 +24,5 @@ public class Product {
     private BigDecimal price;
 
     @Column(name = "IN_STOCK")
-    private BigDecimal inStock;
+    private Integer inStock;
 }
