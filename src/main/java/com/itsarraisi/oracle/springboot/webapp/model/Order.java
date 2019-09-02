@@ -5,7 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.sql.Date;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -23,4 +23,6 @@ public class Order {
 
     @Column(name = "DATE")
     private String date;
+
+    List<OrderLine> orderLineList;
 }
